@@ -1,0 +1,1731 @@
+/* ------------------------- Styleguide ® Code by Dennis -------------------------------------------------- */
+
+/* ------------------------- Fonts -------------------------------------------------- */
+
+@font-face {
+	font-family: "Circular Pro";
+	src: url("../fonts/CircularPro-Bold.otf") format("opentype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: "Circular Pro";
+	src: url("../fonts/CircularPro-BoldItalic.otf") format("opentype");
+	font-weight: 700;
+	font-style: italic;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: "Circular Pro";
+	src: url("../fonts/CircularPro-Black.otf") format("opentype");
+	font-weight: 900;
+	font-style: normal;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: "Circular Pro";
+	src: url("../fonts/CircularPro-BlackItalic.otf") format("opentype");
+	font-weight: 900;
+	font-style: italic;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: "Circular Pro";
+	src: url("../fonts/CircularPro-Book.otf") format("opentype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: auto;
+}
+
+@font-face {
+	font-family: "Circular Pro";
+	src: url("../fonts/CircularPro-BookItalic.otf") format("opentype");
+	font-weight: 400;
+	font-style: italic;
+	font-display: auto;
+}
+
+/* ------------------------- Colors -------------------------------------------------- */
+
+:root {
+	--color-dark: #2a2b2f;
+	--color-dark-dark: #111113;
+	--color-light: #ffffff;
+	--color-white: #ffffff;
+	--color-primary: #ff0033;
+	--color-gray: #999999;
+	--color-lightgray: #eeeeee;
+	--color-inactive: rgba(0, 0, 0, 0.2);
+
+	--color-border: rgba(28, 29, 35, 0.2);
+	--color-border-light: rgba(255, 255, 255, 0.2);
+
+	--color-text: #1c1d20;
+	--color-text-light: #ffffff;
+
+	--alert-error: #ff0033;
+	--alert-success: #24c958;
+
+	--animation-primary: all 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+	--animation-fast: all 0.2s cubic-bezier(0.7, 0, 0.3, 1);
+	--animation-smooth: all 0.6s cubic-bezier(0.8, 0, 0.2, 1);
+	--animation-slow: all 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+
+	--section-padding: 13vh;
+	--container-padding: min(10vw, 10em);
+	--gap-padding: min(1vw, 1em);
+
+	--title-size: clamp(3em, 8vw, 8em);
+	--badge-size: clamp(8em, 14vw, 11em);
+	--angle-size: 19.5vw;
+}
+
+@media screen and (max-width: 1024px) {
+	:root {
+		--container-padding: calc(var(--gap-padding) * 2);
+		--gap-padding: 2.5vw;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	:root {
+		--section-padding: 13vh;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	:root {
+		--container-padding: calc(var(--gap-padding) * 1);
+		--section-padding: calc(5vh + 2em);
+		--gap-padding: 4vw;
+	}
+}
+
+/* ------------------------- Body -------------------------------------------------- */
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+li,
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	font-family: "Circular Pro", sans-serif;
+	color: var(--color-text);
+	line-height: 1.5;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	font-size: clamp(16px, 1.2vw, 19px);
+	background-color: var(--color-light);
+}
+
+html,
+body {
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
+	background-color: var(--color-light);
+}
+
+/* Selection */
+::selection {
+	background-color: var(--color-lightgray);
+	color: var(--color-primary);
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background-color: var(--color-lightgray);
+	color: var(--color-primary);
+	text-shadow: none;
+}
+
+/* General */
+canvas,
+img,
+video {
+	max-width: 100%;
+	height: auto;
+	box-sizing: border-box;
+}
+
+svg {
+	max-width: none;
+	height: auto;
+	box-sizing: border-box;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+/* ------------------------- Typography -------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6, p, a, li, ul, ol, span, strong, em {
+	padding: 0;
+	margin: 0;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+}
+
+h1:last-child,h2:last-child,h3:last-child,h4:last-child,p:last-child,p.big:last-child,p.small:last-child,a:last-child,strong:last-child {
+	margin-bottom: 0;
+}
+
+h1 {
+	font-family: "Circular Pro", sans-serif;
+	font-weight: 900;
+	font-style: italic;
+	font-size: var(--title-size);
+	line-height: 0.9;
+	color: var(--color-light);
+	text-transform: uppercase;
+	line-height: 1;
+	-webkit-text-stroke: 0.065em;
+	-webkit-text-stroke-color: var(--color-light);
+	transform: rotate(-11deg);
+}
+
+h1 .span-line .span-line-inner {
+	font-weight: 900;
+	font-style: italic;
+	-webkit-text-stroke: 0.065em;
+}
+
+h2 {
+	font-family: "Circular Pro", sans-serif;
+	font-weight: 900;
+	font-style: italic;
+	font-size: calc(var(--title-size) * 0.55);
+	line-height: 0.9;
+	color: var(--color-light);
+	text-transform: uppercase;
+	-webkit-text-stroke: 0.05em;
+	-webkit-text-stroke-color: var(--color-light);
+	transform: rotate(-11deg);
+}
+
+h2.normal {
+	font-style: normal;
+	transform: rotate(0deg);
+	line-height: 1;
+	font-size: calc(var(--title-size) * 0.55);
+}
+
+.section h2:first-child {
+	margin-top: 3vh;
+}
+
+.section h2.normal:first-child {
+	margin-top: unset;
+}
+
+.angle-top h2:first-child {
+	margin-top: 0;
+}
+
+.angle-top h2.normal:first-child {
+	margin-top: 3vh;
+}
+
+.theme-light h2,
+.theme-light h2.normal {
+	-webkit-text-stroke: 0.055em;
+}
+
+h3 {
+	font-family: "Circular Pro", sans-serif;
+	font-weight: 900;
+	font-style: normal;
+	font-size: calc(var(--title-size) * 0.3);
+	line-height: 0.9;
+	color: var(--color-light);
+	text-transform: uppercase;
+	-webkit-text-stroke: 0.05em;
+	-webkit-text-stroke-color: var(--color-light);
+}
+
+h4 {
+	font-family: "Circular Pro", sans-serif;
+	font-weight: 900;
+	font-style: italic;
+	font-size: calc(var(--title-size) * 0.185);
+	line-height: 0.9;
+	color: var(--color-light);
+	text-transform: uppercase;
+	-webkit-text-stroke: 0.03em;
+	-webkit-text-stroke-color: var(--color-light);
+	transform: rotate(-11deg);
+}
+
+h4.normal {
+	font-style: normal;
+	transform: rotate(0deg);
+	font-size: calc(var(--title-size) * 0.185);
+	line-height: 1.2;
+	-webkit-text-stroke: 0.03em;
+}
+
+h4 .span-line .span-line-inner {
+	font-weight: 900;
+	font-style: italic;
+	-webkit-text-stroke: 0.03em;
+}
+
+@media screen and (max-width: 1024px) {
+	h2 {
+		font-size: calc(var(--title-size) * 0.75);
+	}
+
+	h2.normal {
+		font-size: calc(var(--title-size) * 0.675);
+	}
+
+	h3 {
+		font-size: calc(var(--title-size) * 0.5);
+	}
+
+	h4 {
+		font-size: calc(var(--title-size) * 0.275);
+	}
+
+	h4.normal {
+		font-size: calc(var(--title-size) * 0.275);
+	}
+}
+
+@media screen and (max-width: 720px) {
+	h2 {
+		font-size: calc(var(--title-size) * 0.75);
+	}
+
+	h2.normal {
+		font-size: calc(var(--title-size) * 0.75);
+	}
+
+	h3 {
+		font-size: calc(var(--title-size) * 0.625);
+	}
+
+	h4 {
+		font-size: calc(var(--title-size) * 0.4);
+	}
+
+	h4.normal {
+		font-size: calc(var(--title-size) * 0.4);
+	}
+}
+
+h5 {
+	font-family: "Circular Pro", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1em;
+	line-height: 1;
+   color: var(--color-light);
+}
+
+h5+h2 {
+	margin-top: 0.5em;
+}
+
+p {
+	font-family: "Circular Pro", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1em;
+	line-height: 1.4;
+	color: var(--color-text);
+	margin-bottom: 1em;
+}
+
+.theme-dark p {
+	color: var(--color-text-light);
+}
+
+strong {
+	font-weight: 700;
+}
+
+p strong {
+   margin-bottom: 0.25em;
+   display: inline-block;
+}
+
+p em {
+	font-style: italic;
+}
+
+a {
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+p a {
+	color: var(--color-dark);
+	text-decoration: underline;
+   transition: var(--animation-fast);
+}
+
+.theme-dark p a {
+	color: var(--color-light);
+	text-decoration: underline;
+	transition: var(--animation-fast);
+}
+
+p a:hover {
+	opacity: .8;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	text-align: center;
+}
+
+.theme-light h1,
+.theme-light h2,
+.theme-light h3,
+.theme-light h4 {
+	color: var(--color-primary);
+	-webkit-text-stroke-color: var(--color-primary);
+}
+
+.theme-light h5,
+.theme-light p {
+	color: var(--color-dark);
+}
+
+/* ------------------------- Main Elements -------------------------------------------------- */
+
+.section {
+	display: block;
+	padding-top: var(--section-padding);
+	padding-bottom: var(--section-padding);
+	position: relative;
+}
+
+.section.theme-dark+.section.theme-dark {
+	margin-top: -1px;
+}
+
+.theme-dark.section {
+	background: var(--color-primary);
+}
+
+.theme-lightgray.section {
+	background: var(--color-lightgray);
+}
+
+.section-wrap {
+	display: block;
+	padding-top: 0;
+	padding-bottom: 0;
+	position: relative;
+}
+
+.section.full-height {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.section.no-padding {
+	padding-top: unset;
+	padding-bottom: unset;
+}
+
+.container {
+	margin: 0 auto;
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
+	max-width: 100em;
+}
+
+.container.center {
+	text-align: center;
+}
+
+.container.center h5 {
+	text-align: center;
+	width: 100%;
+}
+
+.container.large {
+	padding-left: var(--gap-padding);
+	padding-right: var(--gap-padding);
+}
+
+.container.medium {
+	padding-left: calc(var(--container-padding) * 2);
+	padding-right: calc(var(--container-padding) * 2);
+}
+
+.container.small {
+	padding-left: calc(var(--container-padding) * 2.5);
+	padding-right: calc(var(--container-padding) * 2.5);
+}
+
+.container.tiny {
+	padding-left: calc(var(--container-padding) * 3);
+	padding-right: calc(var(--container-padding) * 3);
+}
+
+.container.no-padding {
+	padding-left: unset;
+	padding-right: unset;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.row.no-flex {
+	display: block;
+}
+
+.row.no-wrap {
+	flex-wrap: nowrap;
+}
+
+.flex-col {
+	display: block;
+	width: 100%;
+	order: 2;
+	position: relative;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+img.overlay,
+video.overlay {
+	object-fit: cover;
+}
+
+.line {
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: var(--color-border);
+	margin-top: var(--gap-padding);
+	margin-bottom: var(--gap-padding);
+}
+
+.stripe {
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: var(--color-border);
+}
+
+.no-select {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@media screen and (max-width: 540px) {
+	.section.full-height {
+		min-height: 100vh;
+		min-height: calc(var(--vh, 1vh) * 100);
+		max-height: 100vh;
+	}
+
+   .container.medium,
+	.container.small,
+   .container.tiny {
+		padding-left: var(--container-padding);
+		padding-right: var(--container-padding);
+	}
+}
+
+/* ------------------------- Main -------------------------------------------------- */
+
+main {
+	box-sizing: border-box;
+	overflow: hidden;
+	width: 100vw;
+	position: fixed;
+	height: 100%;
+	background: var(--color-light);
+	display: block;
+}
+
+.main-wrap {
+	box-sizing: border-box;
+	width: 100vw;
+	will-change: transform;
+	position: fixed;
+	display: block;
+}
+
+main.touch {
+	position: relative;
+	height: auto;
+}
+
+main.touch .main-wrap {
+	position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+	main {
+		position: relative;
+	}
+
+	.main-wrap {
+		position: relative;
+	}
+}
+
+/* ------------------------- Buttons -------------------------------------------------- */
+
+.btn-row {
+	display: inline-flex;
+	position: relative;
+}
+
+.btn {
+	position: relative;
+	z-index: 5;
+	border: 0;
+	outline: 0;
+}
+
+.btn input {
+	cursor: pointer;
+}
+
+.btn:hover {
+	z-index: 15;
+}
+
+.btn:last-child {
+	margin-bottom: 0;
+}
+
+.btn-click {
+	cursor: pointer;
+	border: 0;
+	color: var(--primary-dark);
+	background: transparent;
+	min-width: 1em;
+	padding: 0;
+	font-size: 1em;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	text-decoration: none;
+	will-change: transform;
+	outline: 0;
+	transform: translateZ(0) rotate(0.001deg);
+}
+
+.btn-click:hover {
+	cursor: pointer;
+}
+
+.btn-text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	color: var(--color-dark);
+	position: relative;
+	transform: rotate(0.001deg);
+	pointer-events: none;
+	will-change: transform, color;
+}
+
+.btn-click:hover {
+	text-decoration: none;
+}
+
+/* ------------------------- Button Normal ------------------------- */
+
+.btn-normal .btn-click {
+	overflow: visible;
+	height: 3em;
+}
+
+.btn-normal .btn-click .btn-text .btn-text-inner {
+	padding: 0.25em 1.25em 0.25em 0.25em;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: var(--color-dark);
+	-webkit-text-stroke: 0.03em;
+	-webkit-text-stroke-color: var(--color-dark);
+	transition: var(--animation-primary);
+}
+
+.btn-normal .btn-click svg:nth-of-type(1) {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0.8em;
+	transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
+	transition: var(--animation-primary);
+}
+
+.btn-normal .btn-click svg:nth-of-type(2) {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0.8em;
+	transform: translate(0%, -50%) scale(1) rotate(0.001deg);
+	transition: var(--animation-primary);
+}
+
+.btn-normal .btn-click svg path {
+	fill: var(--color-dark);
+	transition: var(--animation-primary);
+}
+
+.btn-normal .btn-click svg:nth-of-type(1) path {
+	fill: var(--color-primary);
+}
+
+/* Theme Dark */
+
+.theme-dark .btn-normal .btn-click .btn-text .btn-text-inner {
+	color: var(--color-light);
+	-webkit-text-stroke: 0.03em;
+	-webkit-text-stroke-color: var(--color-light);
+}
+
+.theme-dark .btn-normal .btn-click svg path {
+	fill: var(--color-light);
+}
+
+.theme-dark .btn-normal .btn-click svg:nth-of-type(1) path {
+	fill: var(--color-primary);
+}
+
+/* Hover */
+
+.btn-normal .btn-click:hover .btn-text-inner {
+	padding: 0.25em 0.25em 0.25em 1.25em;
+}
+
+.btn-normal .btn-click:hover svg:nth-of-type(1) {
+	transform: translate(0%, -50%) scale(1) rotate(0.001deg);
+}
+
+.btn-normal .btn-click:hover svg:nth-of-type(2) {
+	transform: translate(50%, -50%) scale(0) rotate(0.001deg);
+}
+
+@media screen and (max-width: 540px) {
+	.btn-normal .btn-click {
+		height: 2em;
+		font-size: 0.85em;
+	}
+}
+
+/* ------------------------- Button Link ------------------------- */
+
+.btn-link .btn-click {
+	height: 3.5em;
+	overflow: visible;
+}
+
+.btn-link .btn-click .btn-text .btn-text-inner {
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: var(--color-dark);
+	-webkit-text-stroke: 0.02em;
+	-webkit-text-stroke-color: var(--color-dark);
+	transition: var(--animation-primary);
+}
+
+.btn-link .btn-click::after {
+	content: "";
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	display: block;
+	width: calc(100% - 1em);
+	height: 2px;
+	background: var(--color-primary);
+	transform: translate(-50%, -50%) scale(0, 1) rotate(0.001deg);
+	transition: var(--animation-primary);
+	will-change: transform;
+	z-index: 2;
+}
+
+/* Theme nav dark */
+
+.theme-nav-dark .btn-link .btn-text .btn-text-inner {
+	color: var(--color-light);
+	-webkit-text-stroke-color: var(--color-light);
+}
+
+.theme-nav-dark .btn-link .btn-click::after {
+	background: var(--color-dark);
+	/* background: var(--color-light); */
+}
+
+/* Theme Home */
+
+.home-header .btn-link .btn-click::after {
+	background: var(--color-primary);
+}
+
+/* Hover */
+
+.btn-link.active .btn-click::after {
+	transform: translate(-50%, -50%) scale(1, 1) rotate(0.001deg);
+	/* transform: translate(-50%, 0) scale(1) rotate(0.001deg); */
+}
+
+.btn-link .btn-click:hover::after {
+	transform: translate(-50%, -50%) scale(1, 1) rotate(0.001deg);
+	/* transform: translate(-50%, 0) scale(1) rotate(0.001deg); */
+}
+
+.btn-row:hover .btn-link .btn-click::after {
+	transform: translate(-50%, -50%) scale(0, 1) rotate(0.001deg);
+	/* transform: translate(-50%, 0) scale(0) rotate(0.001deg); */
+}
+
+.btn-row:hover .btn-link .btn-click:hover::after {
+	transform: translate(-50%, -50%) scale(1, 1) rotate(0.001deg);
+	/* transform: translate(-50%, 0) scale(1) rotate(0.001deg); */
+}
+
+/* ------------------------- Button Link Mobile ------------------------- */
+
+.btn-link-mobile {
+	transform: rotate(-11deg);
+	transform-origin: top left;
+}
+
+.btn-link-mobile .btn-click {
+	overflow: visible;
+}
+
+.btn-link-mobile .btn-click .btn-text {
+	justify-content: flex-start;
+}
+
+.btn-link-mobile .btn-click .btn-text .btn-text-inner {
+	padding: 0.2em 0.2em 0.2em 0.6em;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-style: italic;
+	line-height: 1;
+	color: var(--color-light);
+	-webkit-text-stroke: 0.04em;
+	-webkit-text-stroke-color: var(--color-light);
+	transition: var(--animation-primary);
+	font-size: calc(var(--title-size) * 0.45);
+	font-size: calc(min(55vh, 100vw) * 0.1);
+}
+
+.btn-link-mobile .btn-click::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	display: block;
+	background: var(--color-light);
+	transition: var(--animation-primary);
+	will-change: transform;
+	z-index: 2;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
+	width: calc(min(50vh, 100vw) * 0.035);
+	height: calc(min(50vh, 100vw) * 0.035);
+	border-radius: 50%;
+}
+
+/* Hover */
+
+.btn-link-mobile.active .btn-click::after {
+	transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+}
+
+.btn-link-mobile .btn-click:hover::after {
+	transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+}
+
+.nav-mobile:hover .btn-link-mobile .btn-click::after {
+	transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
+}
+
+.nav-mobile:hover .btn-link-mobile .btn-click:hover::after {
+	transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+}
+
+@media screen and (max-width: 540px) {
+	.btn-link-mobile .btn-click .btn-text .btn-text-inner {
+		font-size: calc(min(55vh, 80vw) * 0.11);
+	}
+}
+
+/* ------------------------- Button Link External ------------------------- */
+
+.btn-link-external .btn-click {
+	overflow: visible;
+}
+
+.btn-link-external .btn-click .btn-text .btn-text-inner {
+	padding: 0.25em 0 0.25em 0;
+	font-weight: 400;
+	color: var(--color-dark);
+	transition: var(--animation-primary);
+}
+
+.btn-link-external .btn-click::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: var(--color-primary);
+	transform: translate(-50%, -50%) scale(0, 1) rotate(0.001deg);
+	transition: var(--animation-primary);
+	will-change: transform;
+	z-index: 5;
+}
+
+/* Them nav dark */
+
+.theme-dark .btn-link-external .btn-text .btn-text-inner {
+	color: var(--color-light);
+}
+
+.theme-dark .btn-link-external .btn-click::after {
+	background: var(--color-light);
+}
+
+/* Hover */
+
+.btn-link-external.active .btn-click::after {
+	transform: translate(-50%, -50%) scale(1, 1) rotate(0.001deg);
+}
+
+.btn-link-external .btn-click:hover::after {
+	transform: translate(-50%, -50%) scale(1, 1) rotate(0.001deg);
+}
+
+.btn-row:hover .btn-link-external .btn-click::after {
+	transform: translate(-50%, -50%) scale(0, 1) rotate(0.001deg);
+}
+
+.btn-row:hover .btn-link-external .btn-click:hover::after {
+	transform: translate(-50%, -50%) scale(1, 1) rotate(0.001deg);
+}
+
+/* ------------------------- Button Circle ------------------------- */
+
+.btn-round {
+	margin: 0;
+	z-index: 20;
+}
+
+.btn-round .btn-click {
+	width: clamp(10em, 12vw, 11em);
+	height: clamp(10em, 12vw, 11em);
+	border-radius: 50%;
+	overflow: visible;
+}
+
+.btn-round .btn-click .btn-fill {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+
+.btn-round .btn-click .btn-fill svg {
+	position: relative;
+	width: 100%;
+}
+
+.btn-round .btn-click .btn-fill svg path {
+	fill: var(--color-primary);
+}
+
+.btn-round .btn-click .btn-text .btn-text-inner {
+	text-align: center;
+	padding: 0.25em;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 1.25em;
+	line-height: 1;
+	font-style: italic;
+	color: var(--color-light);
+	-webkit-text-stroke: 0.02em;
+	-webkit-text-stroke-color: var(--color-light);
+	transition: var(--animation-primary);
+	transform: rotate(-11deg);
+}
+
+/* Theme Dark */
+
+.theme-dark .btn-round .btn-click .btn-fill svg path {
+	fill: var(--color-light);
+}
+
+.theme-dark .btn-round .btn-click .btn-text .btn-text-inner {
+	color: var(--color-dark);
+	-webkit-text-stroke-color: var(--color-dark);
+}
+
+/* Theme Dark */
+
+.theme-dark .btn-round.btn-light .btn-click .btn-fill svg path {
+	fill: var(--color-primary);
+}
+
+.theme-dark .btn-round.btn-light .btn-click .btn-text .btn-text-inner {
+	color: var(--color-light);
+	-webkit-text-stroke-color: var(--color-light);
+}
+
+/* ------------------------- Button Social ------------------------- */
+
+.btn-social {
+	margin-right: 0.25em;
+}
+
+.btn-social .btn-click {
+	overflow: visible;
+	width: 2em;
+	height: 2em;
+}
+
+.btn-social .btn-click .btn-fill {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: transparent;
+}
+
+.btn-social .btn-click svg {
+	position: relative;
+	width: 70%;
+}
+
+.btn-social .btn-click svg path {
+	fill: var(--color-dark);
+}
+
+/* Theme Dark */
+
+.theme-dark .btn-social .btn-click .btn-fill {
+	background: transparent
+}
+
+.theme-dark .btn-social .btn-click svg path {
+	fill: var(--color-light);
+}
+
+/* ------------------------- Button Logo ------------------------- */
+
+.btn-logo {
+	position: relative;
+	z-index: -1;
+}
+
+.btn-logo .btn-click {
+	overflow: visible;
+}
+
+.btn-logo .btn-click svg {
+	overflow: visible;
+	width: calc(clamp(4em, 5.5vw, 5em) * 1.66);
+}
+
+.btn-logo .btn-click svg path {
+	fill: var(--color-primary);
+	transition: fill 0.3s ease-in-out;
+}
+
+.theme-nav-dark .btn-logo .btn-click svg path {
+	fill: var(--color-light);
+}
+
+@media screen and (max-width: 540px) {
+
+	/* Nav active */
+	.theme-nav-light.active .btn-logo .btn-click svg path {
+		fill: var(--color-light);
+	}
+
+	.btn-logo .btn-click svg {
+		overflow: visible;
+		width: calc(clamp(4em, 5.5vw, 5em) * 1.85);
+	}
+}
+
+/* ------------------------- Button Hamburger ------------------------- */
+
+.btn-menu {
+	position: relative;
+}
+
+.btn-menu .btn-click,
+.btn-menu .btn-text {
+	width: clamp(4em, 5.5vw, 5em);
+	height: clamp(4em, 5.5vw, 5em);
+	border-radius: 50%;
+	overflow: visible;
+}
+
+.btn-menu .btn-bars {
+	position: absolute;
+	width: 32%;
+	height: 8%;
+	opacity: 1;
+}
+
+.btn-menu .btn-text {
+	position: relative;
+}
+
+.btn-menu .btn-click .btn-fill {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 110%;
+}
+
+.btn-menu .btn-click .btn-fill svg {
+	position: relative;
+	width: 100%;
+	width: 110%;
+	left: -5%;
+}
+
+.btn-menu .btn-click .btn-fill svg path {
+	fill: var(--color-primary);
+	transition: fill 0.3s ease-in-out;
+}
+
+.btn-menu .btn-bars::before,
+.btn-menu .btn-bars::after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 50%;
+	height: 3px;
+	width: 100%;
+	transform: translate(-50%, -50%) rotate(0.001deg);
+	background-color: var(--color-light);
+	transition: var(--animation-primary), background-color 0.3s ease-in-out;
+}
+
+.btn-menu .btn-bars::before {
+	top: 0;
+	transform: translate(-50%, -50%);
+}
+
+.btn-menu .btn-bars::after {
+	top: 100%;
+	transform: translate(-50%, -50%);
+}
+
+.nav-main.active .btn-bars::before {
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nav-main.active .btn-bars::after {
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.btn-menu .btn-click .btn-fill svg path {
+	fill: var(--color-primary);
+	transition: fill 0.3s ease-in-out;
+}
+
+.btn-menu .btn-click .btn-fill svg path {
+	fill: var(--color-primary);
+	transition: fill 0.3s ease-in-out;
+}
+
+/* Nav active */
+
+.nav-main.active .btn-bars::before {
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+	background-color: var(--color-primary);
+	transition: var(--animation-primary), background-color 0.3s ease-in-out;
+}
+
+.nav-main.active .btn-bars::after {
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(-45deg);
+	background-color: var(--color-primary);
+	transition: var(--animation-primary), background-color 0.3s ease-in-out;
+}
+
+.nav-main.active .btn-click .btn-fill svg path {
+	fill: var(--color-light) !important;
+	transition: fill 0.3s ease-in-out;
+}
+
+/* Theme Dark */
+
+.theme-nav-dark .btn-menu .btn-click .btn-fill svg path {
+	fill: var(--color-light);
+}
+
+.theme-nav-dark .btn-menu .btn-bars::before,
+.theme-nav-dark .btn-menu .btn-bars::after {
+	background-color: var(--color-primary);
+}
+
+/* ------------------------- Button Close ------------------------- */
+
+.btn-close {
+	position: relative;
+}
+
+.btn-close .btn-click,
+.btn-close .btn-text {
+	width: clamp(4em, 5.5vw, 5em);
+	height: clamp(4em, 5.5vw, 5em);
+	border-radius: 50%;
+	overflow: visible;
+}
+
+.btn-close .btn-bars {
+	position: absolute;
+	width: 32%;
+	height: 8%;
+	opacity: 1;
+}
+
+.btn-close .btn-text {
+	position: relative;
+}
+
+.btn-close .btn-click .btn-fill {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 110%;
+}
+
+.btn-close .btn-click .btn-fill svg {
+	position: relative;
+	width: 100%;
+	width: 110%;
+	left: -5%;
+}
+
+.btn-close .btn-click .btn-fill svg path {
+	fill: var(--color-primary);
+	transition: fill 0.3s ease-in-out;
+}
+
+.btn-close .btn-bars::before,
+.btn-close .btn-bars::after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 50%;
+	height: 3px;
+	width: 100%;
+	transform: translate(-50%, -50%) rotate(0.001deg);
+	background-color: var(--color-light);
+	transition: var(--animation-primary), background-color 0.3s ease-in-out;
+}
+
+.btn-close .btn-bars::before {
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.btn-close .btn-bars::after {
+	top: 50%;
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.btn-close .btn-click .btn-fill svg path {
+	fill: var(--color-primary);
+	transition: fill 0.3s ease-in-out;
+}
+
+/* ------------------------- Button Arrow ------------------------- */
+
+.btn-arrow .btn-click {
+	width: 3em;
+	height: 3em;
+	border-radius: 50%;
+	transition: background-color .3s ease-in-out;
+	background-color: var(--color-lightgray);
+}
+
+.btn-arrow .btn-click:hover {
+	background-color: var(--color-light);
+}
+
+.btn-arrow .btn-click svg {
+	width: 1em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.btn-arrow.prev .btn-click svg {
+	transform: translate(-50%, -50%) scale(-1, 1);
+}
+
+
+
+/* ------------------------- Social Icons -------------------------------------------------- */
+
+.s-icon {
+	position: relative;
+	overflow: hidden;
+	width: 1.75em;
+	height: 1.75em;
+	margin-right: 0.15em;
+	margin-left: 0.15em;
+	border-radius: 50%;
+	background-color: var(--primary);
+	transition: var(--animation-fast);
+	display: block;
+	float: left;
+}
+
+.s-icon .s-icon-wrap {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(0.0001deg);
+	width: 65%;
+	transition: var(--animation-fast);
+}
+
+.s-icon .s-icon-wrap svg {
+	display: block;
+	width: 100%;
+}
+
+.s-icon .s-icon-wrap svg path {
+	fill: var(--color-dark);
+	transition: var(--animation-fast);
+}
+
+.s-icon:hover {
+	background: var(--color-primary);
+	cursor: pointer;
+}
+
+.s-icon:hover svg path {
+	fill: var(--color-light);
+}
+
+/* ------------------------- Color Box -------------------------------------------------- */
+
+.color-box {
+	width: calc(33.333% - 1.333em);
+	background: var(--primary-dark);
+	font-weight: 500;
+	color: var(--white);
+	margin-right: 2em;
+	margin-top: 2em;
+}
+
+.color-box:nth-child(3),
+.color-box:nth-child(6) {
+	margin-right: 0;
+}
+
+.color-box:before {
+	content: "";
+	display: block;
+	padding-top: 40%;
+}
+
+.color-box .overlay {
+	padding: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.color-box.dark {
+	background: var(--color-dark);
+	box-shadow: inset 0 0 0 1px var(--primary-light);
+	color: white;
+}
+
+.color-box.gray {
+	background: var(--color-gray);
+	color: white;
+}
+
+.color-box.primary {
+	background: var(--color-primary);
+	color: white;
+}
+
+.color-box.white {
+	background: #fff;
+	box-shadow: inset 0 0 0 1px var(--color-border);
+	color: var(--color-dark);
+}
+
+.color-box.light-gray {
+	background: var(--color-lightgray);
+	box-shadow: inset 0 0 0 1px var(--color-border);
+	color: var(--color-dark);
+}
+
+.color-box.border {
+	background: var(--color-border);
+}
+
+@media screen and (max-width: 1000px) {
+	.color-box {
+		width: calc(50% - 1em);
+	}
+
+	.color-box:nth-child(3),
+	.color-box:nth-child(6) {
+		margin-right: 2em;
+	}
+
+	.color-box:nth-child(even) {
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.color-box {
+		width: 100%;
+	}
+
+	.color-box:nth-child(even),
+	.color-box:nth-child(odd) {
+		margin-right: 0;
+	}
+}
+
+/* ------------------------- Form -------------------------------------------------- */
+
+.form {
+	width: 100%;
+	display: block;
+}
+
+.form-container {
+	width: 100%;
+}
+
+.hidden-field,
+.website-field {
+	position: absolute;
+	left: -9999px;
+}
+
+.form input,
+.form textarea,
+.form select {
+	border: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.grecaptcha-badge {
+	top: calc(100% - 120px) !important;
+	transform: translate(0, -50%);
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 5px !important;
+	visibility: hidden;
+}
+
+.form-col {
+	display: block;
+	width: 100%;
+	margin-bottom: 2em;
+}
+
+.form .field {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	width: 100%;
+	padding: 1em 1.25em;
+	border: 1px solid var(--color-border);
+	border-radius: 0;
+	font-weight: 500;
+	font-size: 1em;
+	color: var(--color-dark);
+	display: block;
+}
+
+.form .field:focus {
+	outline: 0;
+	outline-width: 1px !important;
+	outline-offset: 0px;
+	border-radius: 0;
+	border: 1px solid var(--color-primary);
+}
+
+.form .field::-webkit-input-placeholder,
+.form .field:-ms-input-placeholder,
+.form .field::-ms-input-placeholder,
+.form .field::placeholder {
+	color: var(--color-text-light);
+	font-weight: 500;
+}
+
+.form textarea.field {
+	min-height: 10em;
+	padding-top: 1em;
+	resize: vertical;
+}
+
+.form .label {
+	width: 100%;
+	display: block;
+	margin-bottom: 1em;
+	color: var(--color-dark);
+	font-size: 0.75em;
+	font-weight: 500;
+}
+
+.form .label span {
+	color: var(--alert-error);
+	font-weight: 700;
+}
+
+.form .form-btn {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+}
+
+/* --- Arlert Options --- */
+
+.alert {
+	width: 100%;
+	padding: 0.4em 0.5em 0.6em 0.5em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--alert-error);
+	background-color: rgba(255, 71, 71, 0.2);
+	text-align: center;
+	margin: 1em 0;
+}
+
+.alert span {
+	color: var(--alert-error);
+	font-size: 0.8em;
+	font-weight: 500;
+}
+
+.alert-success {
+	border-color: var(--alert-success);
+	background-color: rgba(11, 160, 78, 0.2);
+}
+
+.alert-success span {
+	color: var(--alert-success);
+}
+
+/* --- Custom Checkbox --- */
+
+.form .checkbox-button {
+	display: flex;
+	margin-bottom: 1em;
+	padding-left: 1.25em;
+	align-items: center;
+	font-size: 1em;
+	font-weight: 500;
+}
+
+.form .checkbox-button:hover {
+	cursor: pointer;
+}
+
+.form .checkbox-button input {
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+.form .checkbox-button span {
+	height: 1.1em;
+	margin-bottom: 0px;
+	color: var(--color-text);
+	order: 2;
+	display: inline-block;
+}
+
+.form .checkbox-button .custom-check {
+	position: relative;
+	order: 1;
+	width: 20px;
+	height: 20px;
+	margin-top: 0em;
+	margin-right: 0.5em;
+	margin-left: -1.25em;
+	border: 1px solid var(--color-border);
+	border-radius: 0em;
+	box-shadow: 0;
+	overflow: hidden;
+}
+
+.form .checkbox-button .custom-check:after {
+	display: block;
+	opacity: 0;
+	visibility: hidden;
+	content: "";
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	position: absolute;
+	background-color: var(--color-primary);
+	background-image: url("../img/form-checkmark.svg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.form .checkbox-button input:checked~.custom-check:after {
+	opacity: 1;
+	visibility: visible;
+}
+
+.form .checkbox-button:hover input~.custom-check {
+	background-color: var(--color-lightgray);
+}
+
+.form .checkbox-button input:checked~.custom-check {
+	background-color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+}
+
+.form .checkbox-button input:checked~span {
+	color: var(--color-dark);
+	font-weight: 500;
+}
+
+/* --- Custom Radio --- */
+
+.form .checkbox-button .custom-radio {
+	position: relative;
+	order: 1;
+	width: 20px;
+	height: 20px;
+	margin-top: 0em;
+	margin-right: 0.5em;
+	margin-left: -1.25em;
+	border: 1px solid var(--color-border);
+	border-radius: 0em;
+	box-shadow: 0;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.form .checkbox-button .custom-radio:after {
+	display: block;
+	opacity: 0;
+	visibility: hidden;
+	content: "";
+	width: 6px;
+	height: 6px;
+	top: 6px;
+	left: 6px;
+	position: absolute;
+	background: var(--color-light);
+	border-radius: 50%;
+}
+
+.form .checkbox-button input:checked~.custom-radio:after {
+	opacity: 1;
+	visibility: visible;
+}
+
+.form .checkbox-button:hover input~.custom-radio {
+	background-color: var(--color-light);
+}
+
+.form .checkbox-button input:checked~.custom-radio {
+	background-color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-text-fill-color: #000;
+	-webkit-box-shadow: 0 0 0px 1000px #fff inset;
+	box-shadow: 0 0 0px 1000px #fff inset;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type="radio"] {
+	-webkit-appearance: none;
+}
